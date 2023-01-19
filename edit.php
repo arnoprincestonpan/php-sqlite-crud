@@ -1,11 +1,10 @@
 <?php
-
-    include "dbconfig.php";
-
-    $sql = "SELECT rowid, * FROM students WHERE rowid = '".$_GET['id']."'";
-    $query = $db->query($sql);
-    $row = $query->fetchArray();
-
+	include 'dbconfig.php';
+ 
+	$sql = "SELECT rowid, * FROM students WHERE rowid = '".$_GET['id']."'";
+	$query = $db->query($sql);
+	$row = $query->fetchArray();
+ 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +15,7 @@
     <title>CRUD w/ PHP & SQLite</title>
 </head>
 <body>
-    <form>
+    <form method="POST">
         <a href="index.php">BACK</a>
         <p>
             <label for="firstname">First Name:</label>
